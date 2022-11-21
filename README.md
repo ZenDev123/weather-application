@@ -12,3 +12,4 @@ By the end of this video, you will have a strong understanding of what PWA is an
 
 Setup:
 - run ```npm i && npm start``` for both client and server side to start the development server
+# weather-application
