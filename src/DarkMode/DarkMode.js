@@ -1,6 +1,11 @@
-import { AirplanemodeActiveRounded, WavesRounded } from "@material-ui/icons";
+import {
+  AcUnitRounded,
+  AirplanemodeActiveRounded,
+  RemoveRedEyeRounded,
+  WavesRounded,
+} from "@material-ui/icons";
 import React from "react";
-import './DarkMode.css'
+import "./DarkMode.css";
 
 const DarkMode = ({ query, setQuery, search, weather }) => {
   const date = new Date();
@@ -9,11 +14,11 @@ const DarkMode = ({ query, setQuery, search, weather }) => {
   var year = date.getFullYear();
 
   return (
-    <div className="app">
-      <div className="navbar">
-        <div className="date-day">
-          <div className="Month-Year">
-            <div className="month">
+    <div className="app-dark">
+      <div className="navbar-dark">
+        <div className="date-day-dark">
+          <div className="Month-Year-dark">
+            <div className="month-dark">
               {month === 0 ? "January" : ""}
               {month === 1 ? "February" : ""}
               {month === 2 ? "March" : ""}
@@ -27,13 +32,13 @@ const DarkMode = ({ query, setQuery, search, weather }) => {
               {month === 10 ? "November" : ""}
               {month === 11 ? "December" : ""}
             </div>
-            <div className="year">{year}</div>
+            <div className="year-dark">{year}</div>
           </div>
         </div>
-        <div className="searchbar">
+        <div className="searchbar-dark">
           <input
             type="text"
-            className="search"
+            className="search-dark"
             placeholder="Search For Desired Location"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -42,61 +47,69 @@ const DarkMode = ({ query, setQuery, search, weather }) => {
         </div>
       </div>
       {weather.main && (
-        <div className="data-hero-div">
-          <div className="datas">
-            <div className="wind-data">
-              <div className="data-title">
-                <AirplanemodeActiveRounded /> Wind
+        <div className="data-hero-div-dark">
+          <div className="datas-dark">
+            <div className="visibility-data-dark">
+              <div className="data-title-dark">
+                <RemoveRedEyeRounded />
+                &nbsp; Visibility
+              </div>
+              {weather.visibility / 1000}KM
+            </div>
+            <div className="wind-data-dark">
+              <div className="data-title-dark">
+                <AirplanemodeActiveRounded />
+                &nbsp; Wind
               </div>
               {Math.max(weather.wind.speed)} Km/h
             </div>
-            <div className="search-data">
-              <div className="search-area-name">{weather.name}</div>
-              <div className="search-area-temp">
+            <div className="search-data-dark">
+              <div className="search-area-name-dark">{weather.name}</div>
+              <div className="search-area-temp-dark">
                 {Math.round(weather.main.temp)}&deg;C
               </div>
-              <div className="search-area-clouds">
+              <div className="search-area-clouds-dark">
                 Humidity &nbsp;
                 {weather.main.humidity} %
               </div>
             </div>
-            <div className="pressure-data">
-              <div className="data-title">
+            <div className="pressure-data-dark">
+              <div className="data-title-dark">
                 <WavesRounded /> Pressure
               </div>
               {weather.main.pressure} hPa
+            </div>
+            <div className="visibility-data-dark">
+              <div className="data-title-dark">
+                <RemoveRedEyeRounded />
+                &nbsp; Type
+              </div>
+              {weather.weather[0].main}
             </div>
           </div>
         </div>
       )}
       {weather.main && (
-        <div className="main-body">
-          <div className="wind-data">
-            <div className="wind-speed">
-              Wind Speed: {Math.round(weather.wind.speed)}km/h
-            </div>
-            <div className="wind-direction">
-              {weather.wind.deg > 0 && weather.wind.deg < 90
-                ? "Wind Blowing From South West"
-                : ""}
-              {weather.wind.deg > 91 && weather.wind.deg < 180
-                ? "Wind Blowing From North West"
-                : ""}
-              {weather.wind.deg > 181 && weather.wind.deg < 270
-                ? "Wind Blowing From North East"
-                : ""}
-              {weather.wind.deg > 271 && weather.wind.deg < 360
-                ? "Wind Blowing From South East"
-                : ""}
-            </div>
+        <div className="main-body-dark">
+          <div className="temperature">
+            <AcUnitRounded />
+            Temperature: &nbsp; {Math.round(weather.main.temp)}&deg;C
           </div>
-          <div className="pressure-data">
-            <div className="pressure">
-              Preasure: &nbsp; {weather.main.pressure}
-            </div>
-            <div className="pressure-sea-level">
-              Pressure At Sealevel: &nbsp; {weather.main.sea_level}
-            </div>
+          <div className="wind">
+            <AirplanemodeActiveRounded />
+            Wind Speed: &nbsp; {Math.round(weather.wind.speed)}Kmph
+          </div>
+          <div className="visibility">
+            <RemoveRedEyeRounded />
+            Visibility: &nbsp; {weather.visibility/1000}KM
+          </div>
+          <div className="pressure">
+            <WavesRounded />
+            Pressure: &nbsp; {Math.round(weather.main.pressure)}hPa
+          </div>
+          <div className="type">
+            <AcUnitRounded />
+            Type: &nbsp; {weather.weather[0].main}
           </div>
         </div>
       )}

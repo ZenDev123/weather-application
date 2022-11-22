@@ -1,4 +1,5 @@
 import {
+  AcUnitRounded,
   AirplanemodeActiveRounded,
   ArrowDropUpRounded,
   WavesRounded,
@@ -46,57 +47,69 @@ const LightMode = ({ query, setQuery, search, weather }) => {
         </div>
       </div>
       {weather.main && (
-        <div className="data-hero-div">
-          <div className="datas">
-            <div className="wind-data">
-              <div className="data-title">
-                <AirplanemodeActiveRounded /> Wind
+        <div className="data-hero-div-dark">
+          <div className="datas-dark">
+            <div className="visibility-data-dark">
+              <div className="data-title-dark">
+                <RemoveRedEyeRounded />
+                &nbsp; Visibility
+              </div>
+              {weather.visibility / 1000}KM
+            </div>
+            <div className="wind-data-dark">
+              <div className="data-title-dark">
+                <AirplanemodeActiveRounded />
+                &nbsp; Wind
               </div>
               {Math.max(weather.wind.speed)} Km/h
             </div>
-            <div className="search-data">
-              <div className="search-area-name">{weather.name}</div>
-              <div className="search-area-temp">
+            <div className="search-data-dark">
+              <div className="search-area-name-dark">{weather.name}</div>
+              <div className="search-area-temp-dark">
                 {Math.round(weather.main.temp)}&deg;C
               </div>
-              <div className="search-area-clouds">
+              <div className="search-area-clouds-dark">
                 Humidity &nbsp;
                 {weather.main.humidity} %
               </div>
             </div>
-            <div className="pressure-data">
-              <div className="data-title">
+            <div className="pressure-data-dark">
+              <div className="data-title-dark">
                 <WavesRounded /> Pressure
               </div>
               {weather.main.pressure} hPa
+            </div>
+            <div className="visibility-data-dark">
+              <div className="data-title-dark">
+                <RemoveRedEyeRounded />
+                &nbsp; Type
+              </div>
+              {weather.weather[0].main}
             </div>
           </div>
         </div>
       )}
       {weather.main && (
-        <div className="main-body">
-          <div className="wind-data">
-            <div className="wind-speed">
-              Wind Speed: {Math.round(weather.wind.speed)}km/h
-            </div>
-            <div className="wind-direction">
-              {weather.wind.deg > 0 && weather.wind.deg < 90
-                ? "Wind Blowing From South West"
-                : ""}
-              {weather.wind.deg > 91 && weather.wind.deg < 180
-                ? "Wind Blowing From North West"
-                : ""}
-              {weather.wind.deg > 181 && weather.wind.deg < 270
-                ? "Wind Blowing From North East"
-                : ""}
-              {weather.wind.deg > 271 && weather.wind.deg < 360
-                ? "Wind Blowing From South East"
-                : ""}
-            </div>
+        <div className="main-body-dark">
+          <div className="temperature">
+            <AcUnitRounded />
+            Temperature: &nbsp; {Math.round(weather.main.temp)}&deg;C
           </div>
-          <div className="pressure-data">
-            <div className="pressure">Preasure: &nbsp; {weather.main.pressure}</div>
-            <div className="pressure-sea-level">Pressure At Sealevel: &nbsp; {weather.main.sea_level}</div>
+          <div className="wind">
+            <AirplanemodeActiveRounded />
+            Wind Speed: &nbsp; {Math.round(weather.wind.speed)}Kmph
+          </div>
+          <div className="visibility">
+            <RemoveRedEyeRounded />
+            Visibility: &nbsp; {weather.visibility/1000}KM
+          </div>
+          <div className="pressure">
+            <WavesRounded />
+            Pressure: &nbsp; {Math.round(weather.main.pressure)}hPa
+          </div>
+          <div className="type">
+            <AcUnitRounded />
+            Type: &nbsp; {weather.weather[0].main}
           </div>
         </div>
       )}

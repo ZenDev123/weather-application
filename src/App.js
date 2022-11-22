@@ -14,7 +14,6 @@ const App = () => {
       const data = await fetchWeather(query);
 
       setWeather(data);
-      setQuery("");
     }
   };
 
@@ -26,7 +25,7 @@ const App = () => {
 
   return (
     <div className="weather">
-      {hours > 6 && hours < 18 ? (
+      {/* {hours > 6 && hours < 18 ? (
         <LightMode
           query={query}
           setQuery={setQuery}
@@ -40,7 +39,8 @@ const App = () => {
           search={search}
           weather={weather}
         />
-      )}
+      )} */}
+      <LightMode />
     </div>
   );
 };
