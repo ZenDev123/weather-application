@@ -76,7 +76,7 @@
 .data-hero-div-dark > .datas-dark > .search-data-dark {
   background-color: #222 !important;
   width: 200px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
   height: 200px;
   border-radius: 50%;
   padding: 75px;
@@ -91,7 +91,7 @@
 }
 .data-hero-div-dark > .datas-dark > .search-data-dark > .search-area-temp-dark {
   font-size: 100px;
-  margin-left: -45px;
+  margin: auto;
 }
 .data-hero-div-dark > .datas-dark > .searchbar-dark > .search-area-clouds-dark {
   text-transform: uppercase !important;
@@ -145,23 +145,23 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.main-body-dark > .temperature{
+.main-body-dark > .temperature {
   display: flex;
   align-items: center;
 }
-.main-body-dark > .wind{
+.main-body-dark > .wind {
   display: flex;
   align-items: center;
 }
-.main-body-dark > .visibility{
+.main-body-dark > .visibility {
   display: flex;
   align-items: center;
 }
-.main-body-dark > .pressure{
+.main-body-dark > .pressure {
   display: flex;
   align-items: center;
 }
-.main-body-dark > .type{
+.main-body-dark > .type {
   display: flex;
   align-items: center;
 }
