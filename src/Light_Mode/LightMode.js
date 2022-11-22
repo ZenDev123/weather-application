@@ -2,6 +2,7 @@ import {
   AcUnitRounded,
   AirplanemodeActiveRounded,
   ArrowDropUpRounded,
+  RemoveRedEyeRounded,
   WavesRounded,
 } from "@material-ui/icons";
 import React from "react";
