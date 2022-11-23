@@ -41,9 +41,9 @@
   width: 100%;
   text-align: center;
   align-items: center;
-  border-bottom-left-radius: 25%;
+  border-bottom-left-radius: 50%;
   padding-left: 0px;
-  border-bottom-right-radius: 25%;
+  border-bottom-right-radius: 50%;
   box-shadow: none !important;
 }
 .data-hero-div-dark > .datas-dark {
@@ -74,7 +74,7 @@
   width: 100px;
 }
 .data-hero-div-dark > .datas-dark > .search-data-dark {
-  background-color: #222 !important;
+  background: rgba(31, 31, 31, 0.77);
   width: 200px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
   height: 200px;

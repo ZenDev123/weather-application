@@ -23,9 +23,11 @@ const App = () => {
 
   console.log(weather);
 
+  console.log(hours);
+
   return (
     <div className="weather">
-      {hours > 6 && hours < 18 ? (
+      {hours >= 6 && hours <= 18 ? (
         <LightMode
           query={query}
           setQuery={setQuery}
