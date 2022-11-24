@@ -176,3 +176,28 @@
     width: 80% !important;
   }
 }
+@media screen and (max-width: 1000px) {
+  .data-hero-div-dark > .datas-dark {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .data-hero-div-dark > .datas-dark > .visibility-data-dark,
+  .wind-data-dark,
+  .pressure-data-dark {
+    display: none !important;
+  }
+  .data-hero-div-dark > .datas-dark > .search-data-dark {
+    margin-left: 0px !important;
+  }
+  .main-body-dark {
+    width: 50%;
+    overflow-x: scroll;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 200px;
+    position: static;
+  }
+  .main-body-dark > .temperature, .wind, .visibility, .pressure, .type{
+    padding: 10px;
+  }
+}
